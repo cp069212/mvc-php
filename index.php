@@ -1,5 +1,5 @@
 <?php
-      // Connexion à la base de données
+      // Connexion à la base de données db.sql
       try
       {
          $database = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', 'root');
