@@ -15,8 +15,8 @@
       ?>
       <div class="news">
          <h3>
-            <?php echo htmlspecialchars($post['title']); ?>
-            <em>le <?php echo $post['frenchCreationDate']; ?></em>
+         <? = htmlspecialchars($post['title']) ?>
+            <em>le <? = $post['frenchCreationDate']; ?></em>
          </h3>
          <p>
             <?php
