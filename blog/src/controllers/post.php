@@ -2,6 +2,7 @@
 // src/controllers/post.php
 
 require_once('blog/src/model.php');
+require_once('blog/src/model/comment.php');
 
 function post($identifier)
 {
