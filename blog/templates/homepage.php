@@ -16,7 +16,7 @@ foreach ($posts as $post) {
             <? = nl2br(htmlspecialchars($post['content'])); ?>
             <br />
             <em>
-            <a href="post.php?id=<?= urlencode($post['identifier']) ?> ">
+            <a href="blog/post.php?id=<?= urlencode($post['identifier']) ?> ">
             Commentaires
             </a></em>
         </p>
@@ -26,4 +26,4 @@ foreach ($posts as $post) {
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('layout.php') ?>
+<?php require('blog/templates/layout.php') ?>
