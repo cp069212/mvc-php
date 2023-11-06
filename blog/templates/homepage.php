@@ -10,15 +10,12 @@ foreach ($posts as $post) {
     <div class="news">
         <h3>
             <?= htmlspecialchars($post['title']); ?>
-            <em>le <?= $post['french_creation_date']; ?> </em>
+            <em>le <?= $post['french_creation_date']; ?></em>
         </h3>
         <p>
-            <? = nl2br(htmlspecialchars($post['content'])); ?>
+            <?= nl2br(htmlspecialchars($post['content'])); ?>
             <br />
-            <em>
-            <a href="blog/post.php?id=<?= urlencode($post['identifier']) ?> ">
-            Commentaires
-            </a></em>
+            <em><a href="index.php?action=post&id=<?= urlencode($post['identifier']) ?>">Commentaires</a></em>
         </p>
     </div>
 <?php
@@ -26,4 +23,4 @@ foreach ($posts as $post) {
 ?>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('blog/templates/layout.php') ?>
+<?php require('layout.php') ?>

@@ -1,12 +1,10 @@
 <?php
-// src/controllers/homepage.php
 
-require_once('blog/src/model.php');
+require_once('src/model.php');
 
-
-function homepage() 
+function homepage()
 {
     $posts = getPosts();
 
-    require('blog/templates/homepage.php');
+    require('templates/homepage.php');
 }
