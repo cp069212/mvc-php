@@ -32,7 +32,7 @@
 </form>
 
 <?php
-foreach ($comments as $comment) {
+foreach ($comments as $comment) {²
 ?>
     <p><strong><?= htmlspecialchars($comment->author) ?></strong> le <?= $comment->frenchCreationDate ?></p>
     <p><?= nl2br(htmlspecialchars($comment->comment)) ?></p>
