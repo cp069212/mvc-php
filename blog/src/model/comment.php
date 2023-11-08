@@ -1,4 +1,5 @@
 <?php
+
 class Comment
 {
     public $author;
@@ -6,23 +7,24 @@ class Comment
     public $comment;
 }
 
-function getComments(string $post)
+function getComments(string $post): array
 {
     $database = commentDbConnect();
     $statement = $database->prepare(
         "SELECT id, author, comment, DATE_FORMAT(comment_date, '%d/%m/%Y à %Hh%imin%ss') AS french_creation_date FROM comments WHERE post_id = ? ORDER BY comment_date DESC"
     );
     $statement->execute([$post]);
- 
+
     $comments = [];
     while (($row = $statement->fetch())) {
         $comment = new Comment();
-            $comment->author = $row['author'];
-            $comment->frenchCreationDate = $row['french_creation_date'];
-            $comment->comment = $row['comment'];
+        $comment->author = $row['author'];
+        $comment->frenchCreationDate = $row['french_creation_date'];
+        $comment->comment = $row['comment'];
+
         $comments[] = $comment;
     }
- 
+
     return $comments;
 }
 

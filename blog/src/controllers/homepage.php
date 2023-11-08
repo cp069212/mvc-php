@@ -1,10 +1,11 @@
 <?php
 
-require_once('blog/src/model.php');
+require_once('blog/src/model/post.php');
 
 function homepage()
 {
-    $posts = getPosts();
+    $postRepository = new PostRepository();
+    $posts = $postRepository->getPosts();
 
     require('blog/templates/homepage.php');
 }

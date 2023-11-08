@@ -17,4 +17,4 @@ $comments = [
     ],
 ];
 
-require('templates/post.php');
+require('blog/templates/post.php');
